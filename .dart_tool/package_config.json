@@ -44,6 +44,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "dartz",
+      "rootUri": "file:///Users/evaldo/.pub-cache/hosted/pub.dartlang.org/dartz-0.10.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "email_validator",
+      "rootUri": "file:///Users/evaldo/.pub-cache/hosted/pub.dartlang.org/email_validator-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///Users/evaldo/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0",
       "packageUri": "lib/",
@@ -158,7 +170,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-02-08T16:46:01.407934Z",
+  "generated": "2022-02-08T16:58:44.753080Z",
   "generator": "pub",
   "generatorVersion": "2.16.0"
 }
