@@ -8,13 +8,17 @@ import 'app/auth/infra/datasources/auth_datasource.dart';
 
 GetIt getIt = GetIt.instance;
 void main() {
-  getIt.registerSingleton<AuthDatasource>(FirebaseAuthDatasource());
-  getIt.registerSingleton<AuthRepository>(AuthRepositoryImpl(getIt.get()));
-  getIt.registerSingleton(LoginUsecase(getIt.get()));
+  setUp();
 
   LoginUsecase login = getIt<LoginUsecase>();
 
   login(CredentialParams(email: 'bianchievaldo@gmail.com', password: '1234'))
       .then((value) =>
           value.fold((l) => print(l.message), (r) => print(r.email)));
+}
+
+void setUp() {
+  getIt.registerSingleton<AuthDatasource>(FirebaseAuthDatasource());
+  getIt.registerSingleton<AuthRepository>(AuthRepositoryImpl(getIt.get()));
+  getIt.registerSingleton(LoginUsecase(getIt.get()));
 }
