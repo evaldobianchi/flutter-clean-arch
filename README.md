@@ -8,3 +8,7 @@ Projeto com exemplo de implementação de CleanArch com Flutter
 - SOLID
 - Programação funcional com Either
 - Testes unitários
+
+# Referência
+
+https://github.com/Flutterando/Clean-Dart
