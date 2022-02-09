@@ -28,4 +28,32 @@ void main() {
     expect(result.isRight(), isTrue);
     expect(result.getOrElse(() => LoggerUser(email: '', name: '')).name, equals('Evaldo'));
   });
+
+  testWidgets('Email invalido', (tester) async {
+    var params =
+        CredentialParams(email: 'bianchievaldo', password: '123');
+    var result = await usecase(params);
+
+    expect(result.isLeft(), isTrue);
+    expect(result.fold(id, id), isA<AuthExeption>());
+  });
+
+  testWidgets('Password invalido', (tester) async {
+    var params =
+        CredentialParams(email: 'bianchievaldo@gmail.com', password: '');
+    var result = await usecase(params);
+
+    expect(result.isLeft(), isTrue);
+    expect(result.fold(id, id), isA<AuthExeption>());
+  });
+
+
+  testWidgets('Password invalido no repository', (tester) async {
+    var params =
+        CredentialParams(email: 'bianchievaldo@gmail.com', password: '1234');
+    var result = await usecase(params);
+
+    expect(result.isLeft(), isTrue);
+    expect(result.fold(id, id), isA<AuthExeption>());
+  });
 }
